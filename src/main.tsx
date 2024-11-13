@@ -1,11 +1,16 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';
-import App from './App';
+import ReactDOM from 'react-dom';
+import App from './App'; // Jika Anda memiliki file CSS global
+import { IonApp } from '@ionic/react';
+import { setupIonicReact } from '@ionic/react';
 
-const container = document.getElementById('root');
-const root = createRoot(container!);
-root.render(
+setupIonicReact();
+
+ReactDOM.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <IonApp>
+      <App />
+    </IonApp>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
